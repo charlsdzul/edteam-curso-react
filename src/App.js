@@ -16,15 +16,15 @@ const App = () => (
         <div className="main-banner__data s-center">
           <p className="t2 s-mb-0">REACT</p>
           <p> Subtítulo del banner</p>
-          <a href="#" classNameName="button">Botón del banner</a>
+          <a href="#" className="button">Botón del banner</a>
         </div>
       </div>
     </div>
   </div>
 
-  <div className="ed-grid" m-grid-3>
-    <Curso />
-    <Curso />
+  <div className="ed-grid m-grid-3" >
+    <Curso title="React Desde cero con EDTEAM"/> 
+    <Curso title="React.js Desde cero con EDTEAM"/>
     <Curso />
     <Curso />
   </div>

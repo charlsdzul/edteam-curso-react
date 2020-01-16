@@ -1,11 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App.js';
-
-
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App.js";
 
 //Ubicar elemento root, la base de toda la página
-const root0 = document.getElementById('root');
+const root0 = document.getElementById("root");
 
 //<App /> llamado al componente
 ReactDOM.render(<App />, root0);

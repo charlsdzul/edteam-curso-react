@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types'; //yarn add prop-types: Libreria para usar Curso.propTypes y Curso.defaultProps
 
-const persona = {"nombre":"Carlos", "apellido":"dzul", "edad":29};
+const persona = {"apellido":"dzul", "edad":29};
 
 const mayorDeEdad = edad => edad>18;
 
@@ -13,7 +14,7 @@ const curso = {
 // const Curso = ({propiedad, propiedad}) => SÍ RECIBE PROPIEDADES SELECCIONADAS. Se leen con "propiedad"
 // const Curso = () =>    NO RECIBE PROPIEDADES
 
-const Curso = props => (
+const Curso = ({title,image,nombre,apellido,edad}) => (
  <article className="card">
    {11+11}
     <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
@@ -21,17 +22,17 @@ const Curso = props => (
     </div>
     <div className="card__data s-border s-radius-br s-radius-bl s-pxy-2">
       <h3 className="t5 s-mb-2 s-center">
-        {props.title}
+        {title}
       </h3>
       <div className="s-mb-2 s-main-center">
         <div className="card__teacher s-cross-center">
           <div className="card__avatar s-mr-1">
             <div className="circle img-container">
-              <img src={curso.image} alt={curso.title}/>
+              <img src={image} alt={title}/>
             </div>
           </div>
-          <span className="small">{persona.nombre + " " + persona.apellido}</span>
-          <span className="small"> {mayorDeEdad(persona.edad) ? " Soy mayor de edad" : "Soy menor de edad"}</span>
+          <span className="small">{nombre + " " + apellido}</span>
+          <span className="small"> {mayorDeEdad(edad) ? " Soy mayor de edad" : "Soy menor de edad"}</span>
            {mayorDeEdad(persona.edad) ? <span>Soy mayor de edad!</span> : <span>Soy mayor de edad!</span>}
         </div>
       </div>
@@ -42,5 +43,24 @@ const Curso = props => (
   </article>
 
 )
+
+
+
+//El tipo de valor que se espera para cada propiedad
+Curso.propTypes={
+  nombre: PropTypes.string,
+  image: PropTypes.string,
+  title: PropTypes.string,
+
+}
+
+//Valores default en caso de que el componente no reciba la propiedad
+Curso.defaultProps={
+  nombre:"No hay nombre",
+  apellido:"No hay apellido",
+  image:"link_De_imagen",
+  title:"No hay titulo"
+
+}
 
 export default Curso;
